@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Leen On Christ | Houston Pilates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'leen-cream': '#FDFBF7',
+              'leen-pink': '#FCE7E9',
+              'leen-rose': '#E8B4B8',
+              'leen-stone': '#5D576B',
+              'leen-gold': '#D4AF37',
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Montserrat"', 'sans-serif'],
+              hand: ['"Nothing You Could Do"', 'cursive'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'float': 'float 6s ease-in-out infinite',
+              'float-slow': 'float 10s ease-in-out infinite',
+              'float-reverse': 'floatReverse 12s ease-in-out infinite',
+              'breathe': 'breathe 8s ease-in-out infinite',
+              'pulse-subtle': 'pulseSubtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 3s ease-in-out infinite',
+              'twinkle': 'twinkle 5s ease-in-out infinite',
+              'gradient-slow': 'gradientXY 15s ease infinite',
+              'reveal-up': 'revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              floatReverse: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(15px)' },
+              },
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
+                '50%': { transform: 'scale(1.2)', opacity: '0.1' },
+              },
+              pulseSubtle: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.7' },
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(232, 180, 184, 0.1)' },
+                '50%': { boxShadow: '0 0 25px rgba(232, 180, 184, 0.4)' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.2', transform: 'scale(1)' },
+                '50%': { opacity: '0.8', transform: 'scale(1.5)' },
+              },
+              gradientXY: {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+              },
+              revealUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px) rotate(1deg)' },
+                '100%': { opacity: '1', transform: 'translateY(0) rotate(0deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FDFBF7;
+        color: #5D576B;
+      }
+      /* Hide scrollbar for clean UI */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
