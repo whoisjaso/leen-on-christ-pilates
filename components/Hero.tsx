@@ -162,11 +162,12 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           </span>
         </div>
 
-        {/* Scroll Indicator - decorative */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-float flex flex-col items-center gap-2 text-leen-stone/20" aria-hidden="true">
-           <span className="text-[10px] uppercase tracking-[0.6em] font-light">Descent</span>
-           <ArrowDown size={16} strokeWidth={1} />
-        </div>
+      </div>
+
+      {/* Scroll Indicator - decorative, hidden on very small screens */}
+      <div className="hidden sm:flex absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 animate-float flex-col items-center gap-2 text-leen-stone/30 z-20" aria-hidden="true">
+         <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] font-light text-center">Scroll</span>
+         <ArrowDown size={14} strokeWidth={1.5} />
       </div>
     </section>
   );

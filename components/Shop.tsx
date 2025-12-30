@@ -10,7 +10,7 @@ const PRODUCTS: Product[] = [
     price: 18,
     description: 'Ground yourself with stability. Non-slip, breathable cotton blend.',
     category: 'apparel',
-    image: 'https://picsum.photos/400/400?blur=2'
+    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=400&auto=format&fit=crop'
   },
   {
     id: '2',
@@ -18,15 +18,15 @@ const PRODUCTS: Product[] = [
     price: 45,
     description: 'A resistance ring tailored to tone and sculpture the inner thighs.',
     category: 'equipment',
-    image: 'https://picsum.photos/400/401?blur=2'
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400&auto=format&fit=crop'
   },
   {
     id: '3',
     name: 'Anointing Oil Roller',
     price: 32,
     description: 'Frankincense and Myrrh blend for post-workout recovery.',
-    category: 'equipment',
-    image: 'https://picsum.photos/400/402?blur=2'
+    category: 'wellness',
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=400&auto=format&fit=crop'
   }
 ];
 

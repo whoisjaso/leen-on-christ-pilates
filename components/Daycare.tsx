@@ -29,10 +29,11 @@ export const Daycare: React.FC = () => {
       <div className={`max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="md:w-1/2 relative group">
            <div className="absolute inset-0 bg-leen-rose/20 rounded-t-[10rem] blur-2xl transform scale-90 group-hover:scale-100 transition-transform duration-1000"></div>
-           <img 
-            src="https://picsum.photos/600/800?grayscale" 
-            alt="Childcare Sanctuary" 
+           <img
+            src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=600&auto=format&fit=crop"
+            alt="Children playing in a nurturing daycare environment"
             className="relative z-10 rounded-t-[10rem] shadow-2xl transition-transform duration-700 group-hover:-translate-y-2"
+            loading="lazy"
           />
         </div>
         <div className="md:w-1/2">
