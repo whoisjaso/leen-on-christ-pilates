@@ -3,17 +3,18 @@ import { useCart } from '../context/CartContext';
 import { X, Minus, Plus, ShoppingBag, ArrowRight, Tag, ShieldCheck } from 'lucide-react';
 
 export const CartDrawer: React.FC = () => {
-  const { 
-    isCartOpen, 
-    closeCart, 
-    cart, 
-    removeFromCart, 
-    addToCart, 
-    cartTotal, 
-    promoCode, 
-    applyPromoCode, 
+  const {
+    isCartOpen,
+    closeCart,
+    cart,
+    removeFromCart,
+    addToCart,
+    decrementFromCart,
+    cartTotal,
+    promoCode,
+    applyPromoCode,
     removePromoCode,
-    discountPercent 
+    discountPercent
   } = useCart();
 
   const [inputCode, setInputCode] = useState('');
@@ -76,26 +77,29 @@ export const CartDrawer: React.FC = () => {
                   </div>
                   <div className="flex justify-between items-end">
                     <div className="flex items-center gap-3 border border-leen-stone/10 rounded-full px-2 py-1">
-                      <button 
-                        onClick={() => item.quantity > 1 ? addToCart({...item, quantity: -1}) /* Logic adjustment needed in context for full decrement, simplified here */ : removeFromCart(item.id)}
-                        className="text-leen-stone/50 hover:text-leen-rose"
+                      <button
+                        onClick={() => decrementFromCart(item.id)}
+                        className="text-leen-stone/50 hover:text-leen-rose p-1"
+                        aria-label="Decrease quantity"
                       >
-                         <Minus size={12} />
+                         <Minus size={14} />
                       </button>
-                      <span className="text-xs font-sans w-3 text-center">{item.quantity}</span>
-                      <button 
-                         onClick={() => addToCart(item)}
-                         className="text-leen-stone/50 hover:text-leen-rose"
+                      <span className="text-xs font-sans w-4 text-center">{item.quantity}</span>
+                      <button
+                         onClick={() => addToCart(item, true)}
+                         className="text-leen-stone/50 hover:text-leen-rose p-1"
+                         aria-label="Increase quantity"
                       >
-                         <Plus size={12} />
+                         <Plus size={14} />
                       </button>
                     </div>
                     <p className="font-sans text-leen-rose font-medium">${item.price * item.quantity}</p>
                   </div>
                 </div>
-                <button 
+                <button
                     onClick={() => removeFromCart(item.id)}
-                    className="self-start text-gray-300 hover:text-red-400 transition-colors"
+                    className="self-start text-gray-300 hover:text-red-400 transition-colors p-1"
+                    aria-label={`Remove ${item.name} from cart`}
                 >
                     <X size={16} />
                 </button>

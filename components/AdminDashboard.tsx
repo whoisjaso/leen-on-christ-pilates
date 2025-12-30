@@ -45,7 +45,9 @@ export const AdminDashboard: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === '2005') {
+    // Admin password should be set via VITE_ADMIN_PASSWORD environment variable
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || '';
+    if (adminPassword && password === adminPassword) {
       setIsAuthenticated(true);
       setAuthError(false);
     } else {

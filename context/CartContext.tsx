@@ -9,6 +9,7 @@ interface CartContextType {
   cart: CartItem[];
   savedItems: Product[];
   addToCart: (product: Product, silent?: boolean) => void;
+  decrementFromCart: (productId: string) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
   toggleSaved: (product: Product) => void;
@@ -87,6 +88,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const decrementFromCart = (productId: string) => {
+    setCart(prev => {
+      const item = prev.find(i => i.id === productId);
+      if (!item) return prev;
+      if (item.quantity <= 1) {
+        return prev.filter(i => i.id !== productId);
+      }
+      return prev.map(i =>
+        i.id === productId ? { ...i, quantity: i.quantity - 1 } : i
+      );
+    });
+  };
+
   const removeFromCart = (productId: string) => {
      setCart(prev => prev.filter(item => item.id !== productId));
   };
@@ -147,13 +161,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const cartTotal = rawTotal - (rawTotal * discountPercent);
 
   return (
-    <CartContext.Provider value={{ 
-      cart, 
-      savedItems, 
-      addToCart, 
-      removeFromCart, 
-      clearCart, 
-      toggleSaved, 
+    <CartContext.Provider value={{
+      cart,
+      savedItems,
+      addToCart,
+      decrementFromCart,
+      removeFromCart,
+      clearCart,
+      toggleSaved,
       moveToCart,
       cartCount,
       savedCount,

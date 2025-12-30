@@ -83,8 +83,8 @@ export const Shop: React.FC = () => {
         setSharedId(product.id);
         setTimeout(() => setSharedId(null), 2000);
       }
-    } catch (err) {
-      console.error('Share failed:', err);
+    } catch {
+      // Share failed silently
     }
   };
 
@@ -106,23 +106,25 @@ export const Shop: React.FC = () => {
                 style={{ transitionDelay: `${index * 150}ms`, opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
               >
                 <div className="relative overflow-hidden bg-leen-cream mb-6 aspect-[4/5] shadow-sm group-hover:shadow-lg group-hover:animate-glow transition-all duration-500 rounded-sm">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
+                  <img
+                    src={product.image}
+                    alt={`${product.name} - ${product.description}`}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 group-hover:opacity-95"
+                    loading="lazy"
+                    decoding="async"
                   />
 
                   {/* Top Right Controls Container */}
                   <div className="absolute top-3 right-3 z-30 flex flex-col gap-2">
                     
                     {/* Quick Add Button (Silent) */}
-                    <button 
+                    <button
                         onClick={(e) => {
-                            e.stopPropagation(); 
+                            e.stopPropagation();
                             handleQuickAdd(product);
                         }}
-                        className="p-2.5 bg-leen-gold text-white rounded-full hover:bg-leen-stone transition-all duration-500 opacity-0 group-hover:opacity-100 transform translate-x-[10px] group-hover:translate-x-0 shadow-lg relative z-10 active:scale-90"
-                        title="Quick Add (Stay on page)"
+                        className="p-2.5 bg-leen-gold text-white rounded-full hover:bg-leen-stone transition-all duration-500 sm:opacity-0 sm:group-hover:opacity-100 transform sm:translate-x-[10px] sm:group-hover:translate-x-0 shadow-lg relative z-10 active:scale-90"
+                        aria-label={`Quick add ${product.name} to cart`}
                     >
                         <Zap size={16} fill="currentColor" strokeWidth={1} />
                         {addedId === product.id && (
@@ -133,13 +135,13 @@ export const Shop: React.FC = () => {
                     </button>
 
                     {/* Share Button */}
-                    <button 
+                    <button
                         onClick={(e) => {
-                            e.stopPropagation(); 
+                            e.stopPropagation();
                             handleShare(product);
                         }}
-                        className="p-2.5 bg-white/80 backdrop-blur-md rounded-full text-leen-stone hover:bg-leen-rose hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 transform translate-x-[10px] group-hover:translate-x-0 shadow-sm relative"
-                        title="Share this treasure"
+                        className="p-2.5 bg-white/80 backdrop-blur-md rounded-full text-leen-stone hover:bg-leen-rose hover:text-white transition-all duration-500 sm:opacity-0 sm:group-hover:opacity-100 transform sm:translate-x-[10px] sm:group-hover:translate-x-0 shadow-sm relative"
+                        aria-label={`Share ${product.name}`}
                     >
                         {sharedId === product.id ? <Check size={16} /> : <Share2 size={16} strokeWidth={1.5} />}
                         {sharedId === product.id && (
@@ -150,7 +152,7 @@ export const Shop: React.FC = () => {
                     </button>
 
                     {/* Save for Later Button */}
-                    <button 
+                    <button
                         onClick={(e) => {
                             e.stopPropagation();
                             toggleSaved(product);
@@ -159,8 +161,8 @@ export const Shop: React.FC = () => {
                                 setTimeout(() => setSavedId(null), 2000);
                             }
                         }}
-                        className={`p-2.5 bg-white/80 backdrop-blur-md rounded-full transition-all duration-500 opacity-0 group-hover:opacity-100 transform translate-x-[10px] group-hover:translate-x-0 shadow-sm delay-75 hover:bg-leen-pink ${isSaved ? 'text-leen-rose' : 'text-leen-stone hover:text-leen-rose'} relative`}
-                        title={isSaved ? "Remove from Sanctuary" : "Save for Later"}
+                        className={`p-2.5 bg-white/80 backdrop-blur-md rounded-full transition-all duration-500 sm:opacity-0 sm:group-hover:opacity-100 transform sm:translate-x-[10px] sm:group-hover:translate-x-0 shadow-sm delay-75 hover:bg-leen-pink ${isSaved ? 'text-leen-rose' : 'text-leen-stone hover:text-leen-rose'} relative`}
+                        aria-label={isSaved ? `Remove ${product.name} from saved items` : `Save ${product.name} for later`}
                     >
                         <Heart size={16} strokeWidth={1.5} className={isSaved ? 'fill-leen-rose' : ''} />
                         {savedId === product.id && (

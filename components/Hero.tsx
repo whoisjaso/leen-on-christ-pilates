@@ -82,12 +82,12 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background with animated gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-leen-cream via-leen-pink/20 to-leen-gold/5 bg-[length:400%_400%] animate-gradient-slow">
-         
+      {/* Background with animated gradient - decorative */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-leen-cream via-leen-pink/20 to-leen-gold/5 bg-[length:400%_400%] animate-gradient-slow" aria-hidden="true">
+
          {/* The Breathing Aura */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-leen-rose/10 rounded-full blur-[80px] animate-breathe pointer-events-none mix-blend-multiply"></div>
-         
+
          {/* Floating Elements */}
          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-leen-rose/20 rounded-full blur-[100px] animate-float opacity-60"></div>
          <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-indigo-100/30 rounded-full blur-[120px] animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
@@ -100,10 +100,10 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
         <div className="flex items-center gap-2 mb-6 animate-fade-in opacity-70">
-          <Wind size={14} className="text-leen-stone/50 animate-pulse" />
-          <h2 className="font-sans text-xs tracking-[0.4em] uppercase text-leen-stone/80">
+          <Wind size={14} className="text-leen-stone/50 animate-pulse" aria-hidden="true" />
+          <p className="font-sans text-xs tracking-[0.4em] uppercase text-leen-stone/80">
             Inhale &middot; Exhale
-          </h2>
+          </p>
         </div>
         
         <h1 className="font-serif text-5xl md:text-8xl text-leen-stone leading-tight mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           <span className="italic text-leen-rose relative inline-block">
             Prayer
             {/* Subtle glow behind the word Prayer */}
-            <span className="absolute inset-0 bg-leen-rose/20 blur-xl rounded-full -z-10 animate-pulse"></span>
+            <span className="absolute inset-0 bg-leen-rose/20 blur-xl rounded-full -z-10 animate-pulse" aria-hidden="true"></span>
           </span> in Motion.
         </h1>
 
@@ -162,8 +162,8 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           </span>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-float flex flex-col items-center gap-2 text-leen-stone/20">
+        {/* Scroll Indicator - decorative */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-float flex flex-col items-center gap-2 text-leen-stone/20" aria-hidden="true">
            <span className="text-[10px] uppercase tracking-[0.6em] font-light">Descent</span>
            <ArrowDown size={16} strokeWidth={1} />
         </div>

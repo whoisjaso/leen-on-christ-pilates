@@ -4,8 +4,8 @@ import { Quote, Phone } from 'lucide-react';
 export const Founder: React.FC = () => {
   return (
     <section id="founder" className="py-32 px-6 bg-white/80 backdrop-blur-sm relative overflow-hidden">
-      {/* Background flourish */}
-      <div className="absolute top-0 right-0 text-[20rem] text-leen-pink/10 font-serif leading-none select-none opacity-50 -translate-y-1/2 translate-x-1/4 animate-float-slow pointer-events-none">
+      {/* Background flourish - decorative */}
+      <div className="absolute top-0 right-0 text-[20rem] text-leen-pink/10 font-serif leading-none select-none opacity-50 -translate-y-1/2 translate-x-1/4 animate-float-slow pointer-events-none" aria-hidden="true">
         Leen
       </div>
 
@@ -17,12 +17,13 @@ export const Founder: React.FC = () => {
           <div className="relative z-10 rounded-t-[15rem] rounded-b-[2rem] overflow-hidden aspect-[3/4] border-[1px] border-leen-rose/20 shadow-2xl transition-transform duration-1000 group-hover:-translate-y-4 bg-leen-cream">
             <img
               src="/aileenpinkpilates.jpeg"
-              alt="Aileen Hernandez"
+              alt="Aileen Hernandez, founder of Leen On Christ Metaphysical Pilates"
               className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000"
+              loading="lazy"
             />
             
-            {/* Mirror Text Overlay */}
-            <div className="absolute top-12 left-0 w-full text-center pointer-events-none mix-blend-multiply opacity-80">
+            {/* Mirror Text Overlay - decorative */}
+            <div className="absolute top-12 left-0 w-full text-center pointer-events-none mix-blend-multiply opacity-80" aria-hidden="true">
                <p className="font-hand text-leen-stone/80 text-3xl md:text-4xl tracking-wide rotate-1">
                  APPRECIATE HOW <br/> FAR YOU'VE COME.
                </p>
@@ -30,8 +31,8 @@ export const Founder: React.FC = () => {
           </div>
 
           {/* Decorative Elements - softer blur */}
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-leen-pink/40 rounded-full blur-[80px] -z-10 animate-float"></div>
-          <div className="absolute -top-10 -left-10 w-64 h-64 bg-leen-gold/5 rounded-full blur-[80px] -z-10 animate-float-reverse"></div>
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-leen-pink/40 rounded-full blur-[80px] -z-10 animate-float" aria-hidden="true"></div>
+          <div className="absolute -top-10 -left-10 w-64 h-64 bg-leen-gold/5 rounded-full blur-[80px] -z-10 animate-float-reverse" aria-hidden="true"></div>
         </div>
 
         {/* Text Column */}
@@ -74,13 +75,13 @@ export const Founder: React.FC = () => {
                 </p>
             </div>
 
-            <div className="relative mt-16 mb-12 p-8 border-l-4 border-leen-rose bg-gradient-to-r from-leen-cream/50 to-transparent rounded-r-sm">
-                <Quote size={48} className="absolute -top-6 -left-6 text-white fill-leen-rose/20 stroke-none" />
+            <blockquote className="relative mt-16 mb-12 p-8 border-l-4 border-leen-rose bg-gradient-to-r from-leen-cream/50 to-transparent rounded-r-sm">
+                <Quote size={48} className="absolute -top-6 -left-6 text-white fill-leen-rose/20 stroke-none" aria-hidden="true" />
                 <p className="font-serif text-2xl md:text-3xl italic text-leen-stone leading-relaxed mb-6 relative z-10">
                 "When you align the spine, you align the life. My goal is to have you walk out of here not just with a stronger core, but with a reality that has fundamentally shifted towards abundance."
                 </p>
-                <p className="font-hand text-right text-2xl text-leen-rose">- Aileen</p>
-            </div>
+                <cite className="font-hand text-right text-2xl text-leen-rose block not-italic">- Aileen</cite>
+            </blockquote>
 
             <div className="grid grid-cols-2 gap-12 pt-8 border-t border-leen-stone/10">
                 <div className="flex flex-col">

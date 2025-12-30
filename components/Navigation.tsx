@@ -54,26 +54,30 @@ export const Navigation: React.FC<NavigationProps> = ({ setCurrentPage, currentP
   return (
     <>
       {/* Main Navigation Bar - Hides when Cart is Open */}
-      <nav 
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
         className={`fixed w-full z-[150] transition-all duration-700 ${
           isCartOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
         } ${
-          isMenuOpen 
-            ? 'bg-transparent' 
+          isMenuOpen
+            ? 'bg-transparent'
             : (scrolled ? 'bg-[#FDFBF7]/95 backdrop-blur-xl shadow-sm py-5 md:py-6' : 'bg-transparent py-8 md:py-14')
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center w-full">
           
           {/* Logo Container */}
-          <div 
+          <button
+            type="button"
             onClick={handleLogoClick}
-            className="cursor-pointer flex flex-col items-center group relative shrink-0 z-[160]"
+            className="cursor-pointer flex flex-col items-center group relative shrink-0 z-[160] bg-transparent border-none"
+            aria-label="Leen On Christ - Go to home"
           >
             <div className={`font-serif text-xl md:text-2xl tracking-[0.25em] text-leen-stone group-hover:text-leen-gold transition-colors duration-500 flex items-center`}>
               <span>LEEN</span>
-              <span className="relative inline-flex items-center justify-center h-[0.9em] w-[0.9em] mx-[0.15em] text-leen-stone group-hover:text-leen-gold transition-colors duration-500">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="w-full h-full animate-pulse-subtle">
+              <span className="relative inline-flex items-center justify-center h-[0.9em] w-[0.9em] mx-[0.15em] text-leen-stone group-hover:text-leen-gold transition-colors duration-500" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="w-full h-full animate-pulse-subtle" aria-hidden="true">
                    <circle cx="12" cy="12" r="9" className="opacity-40" />
                    {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle) => (
                      <path 
@@ -88,8 +92,8 @@ export const Navigation: React.FC<NavigationProps> = ({ setCurrentPage, currentP
               </span>
               <span className="mr-[0.1em]">N</span>
               <span className="ml-[0.2em]">CHRIS</span>
-              <span className="relative inline-flex items-center justify-center h-[1.15em] w-[0.7em] ml-[0.1em] text-leen-rose/80 group-hover:text-leen-rose transition-colors duration-500 -translate-y-[0.08em]">
-                 <svg viewBox="0 0 24 32" fill="currentColor" className="w-full h-full drop-shadow-sm">
+              <span className="relative inline-flex items-center justify-center h-[1.15em] w-[0.7em] ml-[0.1em] text-leen-rose/80 group-hover:text-leen-rose transition-colors duration-500 -translate-y-[0.08em]" aria-hidden="true">
+                 <svg viewBox="0 0 24 32" fill="currentColor" className="w-full h-full drop-shadow-sm" aria-hidden="true">
                    <rect x="11" y="2" width="2" height="28" rx="0.5" />
                    <rect x="3" y="10" width="18" height="1.5" rx="0.3" />
                    <g className="opacity-90">
@@ -103,7 +107,7 @@ export const Navigation: React.FC<NavigationProps> = ({ setCurrentPage, currentP
             <span className="text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-leen-rose mt-1 group-hover:tracking-[0.5em] transition-all duration-700">
               Pilates by Aileen
             </span>
-          </div>
+          </button>
 
           {/* Desktop Nav - Better Spacing */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-14 2xl:gap-20 mx-8">
@@ -161,19 +165,25 @@ export const Navigation: React.FC<NavigationProps> = ({ setCurrentPage, currentP
               )}
             </button>
 
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 text-leen-stone hover:text-leen-rose transition-all duration-300 outline-none relative"
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X size={26} strokeWidth={1.2} /> : <Menu size={26} strokeWidth={1.2} />}
+              {isMenuOpen ? <X size={26} strokeWidth={1.2} aria-hidden="true" /> : <Menu size={26} strokeWidth={1.2} aria-hidden="true" />}
             </button>
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay - Clean, Solid & Centered */}
-      <div 
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
         className={`lg:hidden fixed inset-0 z-[140] bg-[#FDFBF7] flex flex-col transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
@@ -218,7 +228,7 @@ export const Navigation: React.FC<NavigationProps> = ({ setCurrentPage, currentP
                281.800.5218
              </a>
              
-             <div className="flex items-center gap-6 text-leen-stone/30">
+             <div className="flex items-center gap-6 text-leen-stone/30" aria-hidden="true">
                <Instagram size={18} />
                <Phone size={18} />
              </div>

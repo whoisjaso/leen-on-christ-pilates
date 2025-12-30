@@ -67,7 +67,7 @@ const App: React.FC = () => {
         <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
         <CartDrawer />
         
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow" role="main">
           {renderPage()}
         </main>
 
