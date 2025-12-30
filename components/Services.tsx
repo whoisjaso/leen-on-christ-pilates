@@ -11,7 +11,7 @@ const SERVICES: Service[] = [
     duration: 50,
     price: 35,
     category: 'group',
-    image: 'https://images.unsplash.com/photo-1518611012118-2960c8badce4?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: '2',
@@ -20,7 +20,7 @@ const SERVICES: Service[] = [
     duration: 60,
     price: 25,
     category: 'group',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: '3',
@@ -29,7 +29,7 @@ const SERVICES: Service[] = [
     duration: 55,
     price: 95,
     category: 'private',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop'
   },
 ];
 

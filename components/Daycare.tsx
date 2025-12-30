@@ -30,7 +30,7 @@ export const Daycare: React.FC = () => {
         <div className="md:w-1/2 relative group">
            <div className="absolute inset-0 bg-leen-rose/20 rounded-t-[10rem] blur-2xl transform scale-90 group-hover:scale-100 transition-transform duration-1000"></div>
            <img
-            src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=600&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=600&auto=format&fit=crop"
             alt="Children playing in a nurturing daycare environment"
             className="relative z-10 rounded-t-[10rem] shadow-2xl transition-transform duration-700 group-hover:-translate-y-2"
             loading="lazy"

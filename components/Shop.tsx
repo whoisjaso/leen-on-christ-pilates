@@ -10,7 +10,7 @@ const PRODUCTS: Product[] = [
     price: 18,
     description: 'Ground yourself with stability. Non-slip, breathable cotton blend.',
     category: 'apparel',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=400&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1584735175315-9d5df23860e6?q=80&w=400&auto=format&fit=crop'
   },
   {
     id: '2',
@@ -18,7 +18,7 @@ const PRODUCTS: Product[] = [
     price: 45,
     description: 'A resistance ring tailored to tone and sculpture the inner thighs.',
     category: 'equipment',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=400&auto=format&fit=crop'
   },
   {
     id: '3',
@@ -26,7 +26,7 @@ const PRODUCTS: Product[] = [
     price: 32,
     description: 'Frankincense and Myrrh blend for post-workout recovery.',
     category: 'wellness',
-    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=400&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=400&auto=format&fit=crop'
   }
 ];
 
